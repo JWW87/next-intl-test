@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import PageLayout from 'components/PageLayout';
-import Test from 'components/Test';
+import ClientSideComponent from 'components/ClientSideComponent';
 
 type Props = {
   params: { locale: string };
@@ -23,7 +23,7 @@ export default function IndexPage({ params: { locale } }: Props) {
           )
         })}
       </p>
-      <Test />
+      <ClientSideComponent />
     </PageLayout>
   );
 }
