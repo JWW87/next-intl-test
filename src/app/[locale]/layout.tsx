@@ -1,10 +1,10 @@
 import clsx from 'clsx';
 import { Inter } from 'next/font/google';
+import { NextIntlClientProvider } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { ReactNode } from 'react';
 import Navigation from 'components/Navigation';
 import { locales } from '../../config';
-import { NextIntlClientProvider } from 'next-intl';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -34,8 +34,8 @@ export default async function LocaleLayout({
   // Enable static rendering
   unstable_setRequestLocale(locale);
 
-  //Hier kun je op basis van de page params de organization ID ophalen
-  //Met de organization ID kun je middels de getIntlMessages methode de benodigde namespaces voor deze pagina ophalen en meegeven in de messages prop van NextIntlClientProvider
+  // Hier kun je op basis van de page params de organization ID ophalen
+  // Met de organization ID kun je middels de getIntlMessages methode de benodigde namespaces voor deze pagina ophalen en meegeven in de messages prop van NextIntlClientProvider
 
   return (
     <html className="h-full" lang={locale}>
