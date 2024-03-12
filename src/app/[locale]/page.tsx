@@ -1,15 +1,17 @@
-import {useTranslations} from 'next-intl';
-import {unstable_setRequestLocale} from 'next-intl/server';
+import { useTranslations } from 'next-intl';
+import { unstable_setRequestLocale } from 'next-intl/server';
 import PageLayout from 'components/PageLayout';
+import Test from 'components/test';
 
 type Props = {
-  params: {locale: string};
+  params: { locale: string };
 };
 
-export default function IndexPage({params: {locale}}: Props) {
+export default function IndexPage({ params: { locale } }: Props) {
   // Enable static rendering
   unstable_setRequestLocale(locale);
 
+  //Deze t methode heeft alle messages die in i18n.ts worden ingeladen
   const t = useTranslations('IndexPage');
 
   return (
@@ -21,6 +23,7 @@ export default function IndexPage({params: {locale}}: Props) {
           )
         })}
       </p>
+      <Test />
     </PageLayout>
   );
 }
